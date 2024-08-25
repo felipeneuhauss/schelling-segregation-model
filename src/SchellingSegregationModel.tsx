@@ -65,7 +65,7 @@ const SchellingSegregationModel: React.FC = () => {
 
   const runIteration = async () => {
     setIsRunning(true);
-    setShowCompletionMessage(false); // Resetar mensagem ao iniciar uma nova iteração
+    setShowCompletionMessage(false);
 
     let moved;
     do {
@@ -89,7 +89,7 @@ const SchellingSegregationModel: React.FC = () => {
     } while (moved);
 
     setIsRunning(false);
-    setShowCompletionMessage(true); // Mostrar mensagem de conclusão
+    setShowCompletionMessage(true);
   };
 
   const handleApplySettings = () => {
@@ -106,7 +106,7 @@ const SchellingSegregationModel: React.FC = () => {
 
   const handleReset = () => {
     setGrid(initialGrid(rows, cols, emptyPercentage / 100));
-    setShowCompletionMessage(false); // Esconder mensagem ao resetar
+    setShowCompletionMessage(false);
   };
 
   return (
@@ -116,7 +116,7 @@ const SchellingSegregationModel: React.FC = () => {
           variant="filled"
           severity="success"
           style={{ marginBottom: '20px' }}
-          onClose={() => setShowCompletionMessage(false)} // Fechar mensagem manualmente se necessário
+          onClose={() => setShowCompletionMessage(false)}
         >
           <strong>Segregation reached a steady state!</strong>
         </Alert>
