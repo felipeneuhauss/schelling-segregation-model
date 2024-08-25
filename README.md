@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Schelling Segregation Model Simulation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simulation of the Schelling Segregation Model, implemented using React and Material-UI. The model illustrates how individual preferences can lead to social segregation, even when those preferences are relatively mild.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Schelling Segregation Model](src/assets/schelling-segregation-model.png)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+In this simulation, you can configure the size of the grid (number of rows and columns) and the percentage of empty spaces. Once configured, the simulation runs to determine if individuals are satisfied with their neighbors. If not, they move to a new location, and the process repeats until a steady state is reached.
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Adjustable grid size (rows and columns).
+- Configurable percentage of empty spaces.
+- Interactive simulation that visually shows how individuals move to achieve satisfaction.
+- Validation to ensure valid settings (minimum 10 rows, 10 columns, 10% empty spaces; maximum 100 rows and 100 columns).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## How to Use
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository and install the dependencies.
+2. Run the development server to view the simulation in your browser.
+3. Adjust the settings (rows, columns, empty percentage) and click "Apply Settings" to configure the grid.
+4. Click "Run Iteration" to start the simulation and watch as the individuals move to achieve satisfaction.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+
+This project is licensed under the MIT License.
